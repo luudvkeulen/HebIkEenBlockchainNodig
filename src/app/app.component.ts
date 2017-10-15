@@ -6,5 +6,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'app';
+  question1 = 'Heb je een database nodig?';
+  question2 = 'Moeten verschillende mensen naar de database kunnen schrijven?';
 }
