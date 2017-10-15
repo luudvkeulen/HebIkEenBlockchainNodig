@@ -1,5 +1,13 @@
 <div class="container text-center">
   <h1>Heb ik een blockchain nodig?</h1>
-  <app-question [question]="question1"></app-question>
-  <app-question [question]="question2"></app-question>
+  <app-question [question]="question1" (result)="buttonClicked($event, false)"></app-question>
+  <app-question [question]="question2" *ngIf="question >= 2" (result)="buttonClicked($event, false)"></app-question>
+  <app-question [question]="question3" *ngIf="question >= 3" (result)="buttonClicked($event, true)"></app-question>
+  <app-question [question]="question4" *ngIf="question >= 4" (result)="buttonClicked($event, true)"></app-question>
+  <div *ngIf="!needsBlockchain" class="alert alert-danger">
+    <h2><strong>Helaas!</strong> Je hebt geen blockchain nodig.</h2>
+  </div>
+  <div class="alert alert-success" *ngIf="question >= 5">
+    <h2><strong>Gefeliciteerd!</strong> Je hebt een blockchain nodig!</h2>
+  </div>
 </div>

@@ -2,7 +2,6 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
-import {ClarityModule} from 'clarity-angular';
 import { QuestionComponent } from './question/question.component';
 
 @NgModule({
@@ -11,8 +10,7 @@ import { QuestionComponent } from './question/question.component';
     QuestionComponent
   ],
   imports: [
-    BrowserModule,
-    ClarityModule
+    BrowserModule
   ],
   providers: [],
   bootstrap: [AppComponent]

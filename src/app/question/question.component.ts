@@ -1,26 +1,26 @@
-import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
+import {Component, EventEmitter, Input, Output} from '@angular/core';
 
 @Component({
   selector: 'app-question',
   templateUrl: './question.component.html',
   styleUrls: ['./question.component.css']
 })
-export class QuestionComponent implements OnInit {
+export class QuestionComponent {
   @Input() question: string;
   @Output() result = new EventEmitter<Boolean>();
+  disabled: boolean;
 
   constructor() {
   }
 
-  ngOnInit() {
-  }
-
   onYesClicked() {
     this.result.emit(true);
+    this.disabled = true;
   }
 
   onNoClicked() {
     this.result.emit(false);
+    this.disabled = true;
   }
 
 }
